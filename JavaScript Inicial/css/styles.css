@@ -8,7 +8,7 @@ body {
     height: 100vh; /* define a altura da tela 100% */
 }
 .card {
-    background-color: chartreuse;
+    background-color: orange;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0,1);
