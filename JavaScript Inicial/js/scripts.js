@@ -53,3 +53,40 @@ function exe3() {
     //alert("A media ponderada das duas notas é " + sub)
     document.getElementById("sub").innerText = "O resultado é " + sub;
   }  
+  function exe5() {
+    // Recupera o preço digitado pelo usuário
+    let preco = Number(document.getElementById("preco").value);
+    // Calcula o desconto de 10%
+    let desconto = preco * 0.10;
+    // Calcula o preço com desconto
+    let precoComDesconto = preco - desconto;
+    // Exibe o resultado na página
+    document.getElementById("resultado").innerText = "O preço com desconto de 10% é R$ " + precoComDesconto.toFixed(2);
+  }
+  function exe6() {
+    // Recupera o salario digitado pelo usuário
+    let Salario = Number(document.getElementById("Salario").value);
+    // Recupere o valor das vendas do funcionario
+    let vendas = Number(document.getElementById("vendas").value);
+    // Calcula o salario mais suas comissoes
+    let comissao = vendas * 0.04;
+    let salariocomcomissao = Salario + comissao;
+    // Exibe o resultado na página
+    document.getElementById("resultado").innerText = "O valor do salario com suas comissoes é " + salariocomcomissao.toFixed(2);
+  }
+  function exe7() {
+    // Recupera o peso digitado pelo usuário
+    let peso = Number(document.getElementById("peso").value);
+    
+    // Calcula peso com 15% a mais
+    let perengordou = peso * 0.15;
+    let engordou = peso + perengordou
+    // Calcula peso com 20% a menos
+    let peremagreceu = peso * 0.20;
+    let emagreceu = peso - peremagreceu
+    // Exibe o resultado na página
+    document.getElementById("resultado1").innerText = "O novo peso com 15% a mais é " + engordou.toFixed(2);
+    document.getElementById("resultado2").innerText = "O novo peso com 20% a menos é " + emagreceu.toFixed(2);
+  }
+
+  
