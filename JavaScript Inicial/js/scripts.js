@@ -88,5 +88,15 @@ function exe3() {
     document.getElementById("resultado1").innerText = "O novo peso com 15% a mais é " + engordou.toFixed(2);
     document.getElementById("resultado2").innerText = "O novo peso com 20% a menos é " + emagreceu.toFixed(2);
   }
+  function exe8() {
+    // Recupera o peso digitado pelo usuário
+    let peso = Number(document.getElementById("peso").value);
+    // Converter KL em Gramas
+    let gramas = (peso * 1000).toLocaleString("pt-BR")
+    
+    // Exibe o resultado na página
+    document.getElementById("pesores").innerText = "O peso é " + gramas + " gramas."
+  }
+
 
   
