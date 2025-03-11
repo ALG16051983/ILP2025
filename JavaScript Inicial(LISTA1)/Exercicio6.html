@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <!--A largura da pagina sera sempre a largura do dispositivo-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercicio 4</title>
+    <title>Exercicio 6</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/Exercicio1.css" />
     <script src="js/scripts.js"></script>
@@ -29,14 +29,15 @@
     </div>
     <div class="container">
       <div class="card">
-        <h1>Exercicio 4 - Media Ponderada</h1>
+        <h1>Exercicio 6 - Salario + 4% comissao</h1>
         <form>
-          <label>Nota 1</label>
-          <input type="number" id="nro1" />
-          <label>Nota 2</label>
-          <input type="number" id="nro2" />
-          <button onclick="exe4()" type="button">Calcular</button>
-          <label id="sub"> A media é: </label>
+          <label>Qual salario fixo do funcionario?</label>
+          <input type="number" id="Salario" />
+          <label>Qual valor das vendas no mês?</label>
+          <input type="number" id="vendas" />
+          <button onclick="exe6()" type="button">Calcular</button>
+          <label id="comissao"> A comissao de 4% sobre o salario fixo é: </label>
+          <label id="salariocomcomissao"> O salario fixo mais comissao de 4% sobre as vendas é: </label>
         </form>
       </div>
     </div>

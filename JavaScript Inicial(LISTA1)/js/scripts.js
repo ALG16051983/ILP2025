@@ -72,7 +72,8 @@ function exe3() {
     let comissao = vendas * 0.04;
     let salariocomcomissao = Salario + comissao;
     // Exibe o resultado na página
-    document.getElementById("resultado").innerText = "O valor do salario com suas comissoes é " + salariocomcomissao.toFixed(2);
+    document.getElementById("comissao").innerText = "O valor da comissao é " + comissao.toFixed(2);
+    document.getElementById("salariocomcomissao").innerText = "O valor do salario com suas comissoes é " + salariocomcomissao.toFixed(2);
   }
   function exe7() {
     // Recupera o peso digitado pelo usuário
@@ -97,6 +98,23 @@ function exe3() {
     // Exibe o resultado na página
     document.getElementById("pesores").innerText = "O peso é " + gramas + " gramas."
   }
+  function exe9() {
+    // Recupera as bases e altura
+    let basemaior = Number(document.getElementById("basemaior").value);
+    let basemenor = Number(document.getElementById("basemenor").value);
+    let altura = Number(document.getElementById("altura").value);
+    // Calculo area do trapezio
+    let area = (basemaior + basemenor) * altura / 2;
+    // Exibe o resultado na página
+    document.getElementById("area").innerText = "A area do trapezio é " + area  
+  }
+  function exe10() {
+    // Recupera a base do quadrado
+    let lado = Number(document.getElementById("lado").value);
+    // Calculo area do quadrado
+    let area = (lado * lado);
+    // Exibe o resultado na página
+    document.getElementById("area").innerText = "A area do quadrado é " + area
+  }
 
 
-  
