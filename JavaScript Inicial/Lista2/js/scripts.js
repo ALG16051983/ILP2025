@@ -53,8 +53,11 @@ function exe1() {
     let menor;
     if(numero1 < numero2){
       menor= numero1;
-    } else {
+    } else if(numero2 < numero1) {
       menor = numero2;
+    }
+    else {
+      menor = "Os dois são iguais"
     }
   
     document.getElementById("menor").textContent = "O menor numero digitado é: " + menor
@@ -113,6 +116,36 @@ function exe1() {
         alert("Operação inválida.");
         return;
     }
+  
+    // Exibir o resultado
+    document.getElementById("resultado").textContent = "Resultado: " + resultado;
+  }
+  function exe6() {
+    // Obter os valores dos números dos campos de entrada
+    let numero1 = Number(document.getElementById("numero1").value);
+    let numero2 = Number(document.getElementById("numero2").value);
+    let operacao = parseInt(document.getElementById("operacao").value);
+  
+    // Validar os números
+    if (isNaN(numero1) || isNaN(numero2)) {
+      alert("Por favor, insira números válidos.");
+      return;
+    }
+  
+    // Realizar a operação selecionada
+    let resultado;
+    switch (operacao) {
+      case 1: // O primeiro numero elevado ao segundo numero
+        resultado = (numero1 ** numero2);
+        break;
+      case 2: // Raiz quadrada de cada um dos numeros
+        resultado = raizQuadrada = Math.sqrt(numero1);
+        resultado = raizQuadrada = Math.sqrt(numero2);
+        break;  
+      case 3: // Raiz cubica de cada um dos numeros
+        resultado = numero1 * numero2;
+        break;
+      }
   
     // Exibir o resultado
     document.getElementById("resultado").textContent = "Resultado: " + resultado;
