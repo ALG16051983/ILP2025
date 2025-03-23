@@ -109,3 +109,130 @@ function exe1() {
     // Exibir o resultado
     document.getElementById("resultado").textContent = "Resultado: " + resultado;
   }
+  function exe6() {
+    // Obter os valores dos números dos campos de entrada
+    let numero1 = Number(document.getElementById("numero1").value);
+    let numero2 = Number(document.getElementById("numero2").value);
+    let operacao = Number(document.getElementById("operacao").value);
+    
+
+    // Validar os números
+    if (isNaN(numero1) || isNaN(numero2)) {
+      alert("Por favor, insira números válidos.");
+      return;
+    }
+  
+    // Realizar a operação selecionada
+    let resultado;
+    switch (operacao) {
+      case 1: // Primeiro elevado pelo 2
+        resultado = Math.pow(numero1, numero2);
+        break;
+      case 2: // Raiz Quadrada numero 1
+        resultado = `Raiz quadrada de ${numero1}: ${Math.sqrt(numero1)}, Raiz quadrada de ${numero2}: ${Math.sqrt(numero2)}`;
+        break;  
+      case 3: // Raiz Cubica numero 1 
+        resultado = `Raiz cúbica de ${numero1}: ${Math.cbrt(numero1)}, Raiz cúbica de ${numero2}: ${Math.cbrt(numero2)}`;
+        break;
+      default:
+          resultado = "Operação inválida.";
+      }
+      // Exibir o resultado
+    document.getElementById("resultado").textContent = "Resultado: " + resultado;
+  }
+  function exe7() {
+    // Obter o valor do salário do campo de entrada
+    let salario = parseFloat(document.getElementById("salario").value);
+
+    // Verificar se o salário é um número válido
+    if (isNaN(salario)) {
+        document.getElementById("resultado").textContent = "Resultado: Por favor, insira um salário válido.";
+        return;
+    }
+
+    // Calcular o aumento e exibir o resultado
+    if (salario < 500) {
+        let aumento = salario * 0.30;
+        let novoSalario = salario + aumento;
+        document.getElementById("resultado").textContent = "Resultado: Novo salário: R$ " + novoSalario.toFixed(2);
+    } else {
+        document.getElementById("resultado").textContent = "Resultado: Funcionário não tem direito ao aumento.";
+    }
+}
+function exe8() {
+  // Obter o valor do salário do campo de entrada
+  let salario = parseFloat(document.getElementById("salario").value);
+
+  // Verificar se o salário é um número válido
+  if (isNaN(salario)) {
+      document.getElementById("resultado").textContent = "Resultado: Por favor, insira um salário válido.";
+      return;
+  }
+
+  // Calcular o reajuste e exibir o resultado
+  let reajuste;
+  if (salario < 300) {
+      reajuste = salario * 0.35;
+  } else {
+      reajuste = salario * 0.15;
+  }
+
+  let novoSalario = salario + reajuste;
+  document.getElementById("resultado").textContent = "Resultado: Novo salário: R$ " + novoSalario.toFixed(2);
+}
+function exe9() {
+  // Obter o valor do saldo médio do campo de entrada
+  let saldoMedio = parseFloat(document.getElementById("saldoMedio").value);
+
+  // Verificar se o saldo médio é um número válido
+  if (isNaN(saldoMedio)) {
+      document.getElementById("resultado").textContent = "Resultado: Por favor, insira um saldo médio válido.";
+      return;
+  }
+
+  // Calcular o crédito com base no saldo médio
+  let credito;
+  if (saldoMedio > 400) {
+      credito = saldoMedio * 0.30;
+  } else if (saldoMedio >= 301 && saldoMedio <= 400) {
+      credito = saldoMedio * 0.25;
+  } else if (saldoMedio >= 201 && saldoMedio <= 300) {
+      credito = saldoMedio * 0.20;
+  } else {
+      credito = saldoMedio * 0.10;
+  }
+
+  // Exibir o resultado
+  document.getElementById("resultado").textContent = "Resultado: Crédito disponível: R$ " + credito.toFixed(2);
+}
+function exe10() {
+  // Obter o valor do custo de fábrica do campo de entrada
+  let custoFabrica = parseFloat(document.getElementById("custoFabrica").value);
+
+  // Verificar se o custo de fábrica é um número válido
+  if (isNaN(custoFabrica)) {
+      document.getElementById("resultado").textContent = "Resultado: Por favor, insira um custo de fábrica válido.";
+      return;
+  }
+
+  // Calcular o preço ao consumidor com base no custo de fábrica
+  let porcentagemDistribuidor, porcentagemImpostos;
+  if (custoFabrica <= 12000) {
+      porcentagemDistribuidor = 0.05;
+      porcentagemImpostos = 0;
+  } else if (custoFabrica <= 25000) {
+      porcentagemDistribuidor = 0.10;
+      porcentagemImpostos = 0.15;
+  } else {
+      porcentagemDistribuidor = 0.15;
+      porcentagemImpostos = 0.20;
+  }
+
+  let valorDistribuidor = custoFabrica * porcentagemDistribuidor;
+  let valorImpostos = custoFabrica * porcentagemImpostos;
+  let precoConsumidor = custoFabrica + valorDistribuidor + valorImpostos;
+
+  // Exibir o resultado
+  document.getElementById("resultado").textContent = "Resultado: Preço ao consumidor: R$ " + precoConsumidor.toFixed(2);
+}
+
