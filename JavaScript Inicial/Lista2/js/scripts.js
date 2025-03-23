@@ -124,7 +124,7 @@ function exe1() {
     // Obter os valores dos números dos campos de entrada
     let numero1 = Number(document.getElementById("numero1").value);
     let numero2 = Number(document.getElementById("numero2").value);
-    let operacao = parseInt(document.getElementById("operacao").value); // Usar parseInt para garantir um número inteiro
+    let operacao = parseInt(document.getElementById("operacao").value);
 
     // Validar os números
     if (isNaN(numero1) || isNaN(numero2)) {
@@ -135,13 +135,13 @@ function exe1() {
     // Realizar a operação selecionada
     let resultado;
     switch (operacao) {
-        case 1: // Primeiro elevado pelo 2
-            resultado = Math.pow(numero1, numero2);
+        case 1: // O primeiro numero elevado ao segundo numero
+            resultado = numero1 ** numero2; // Usando o operador ** para potência
             break;
-        case 2: // Raiz Quadrada numero 1
+        case 2: // Raiz quadrada de cada um dos numeros
             resultado = `Raiz quadrada de ${numero1}: ${Math.sqrt(numero1)}, Raiz quadrada de ${numero2}: ${Math.sqrt(numero2)}`;
             break; 
-        case 3: // Raiz Cubica numero 1 
+        case 3: // Raiz cúbica de cada um dos numeros
             resultado = `Raiz cúbica de ${numero1}: ${Math.cbrt(numero1)}, Raiz cúbica de ${numero2}: ${Math.cbrt(numero2)}`;
             break;
         default:
