@@ -124,39 +124,33 @@ function exe1() {
     // Obter os valores dos números dos campos de entrada
     let numero1 = Number(document.getElementById("numero1").value);
     let numero2 = Number(document.getElementById("numero2").value);
-<<<<<<< HEAD
-    let operacao = Number(document.getElementById("operacao").value);
-    
+    let operacao = parseInt(document.getElementById("operacao").value); // Usar parseInt para garantir um número inteiro
 
-=======
-    let operacao = parseInt(document.getElementById("operacao").value);
-  
->>>>>>> 00363efd458915b812fcd1f63eea650201ee0240
     // Validar os números
     if (isNaN(numero1) || isNaN(numero2)) {
-      alert("Por favor, insira números válidos.");
-      return;
+        alert("Por favor, insira números válidos.");
+        return;
     }
-  
+
     // Realizar a operação selecionada
     let resultado;
     switch (operacao) {
-<<<<<<< HEAD
-      case 1: // Primeiro elevado pelo 2
-        resultado = Math.pow(numero1, numero2);
-        break;
-      case 2: // Raiz Quadrada numero 1
-        resultado = `Raiz quadrada de ${numero1}: ${Math.sqrt(numero1)}, Raiz quadrada de ${numero2}: ${Math.sqrt(numero2)}`;
-        break;  
-      case 3: // Raiz Cubica numero 1 
-        resultado = `Raiz cúbica de ${numero1}: ${Math.cbrt(numero1)}, Raiz cúbica de ${numero2}: ${Math.cbrt(numero2)}`;
-        break;
-      default:
-          resultado = "Operação inválida.";
-      }
-      // Exibir o resultado
+        case 1: // Primeiro elevado pelo 2
+            resultado = Math.pow(numero1, numero2);
+            break;
+        case 2: // Raiz Quadrada numero 1
+            resultado = `Raiz quadrada de ${numero1}: ${Math.sqrt(numero1)}, Raiz quadrada de ${numero2}: ${Math.sqrt(numero2)}`;
+            break; 
+        case 3: // Raiz Cubica numero 1 
+            resultado = `Raiz cúbica de ${numero1}: ${Math.cbrt(numero1)}, Raiz cúbica de ${numero2}: ${Math.cbrt(numero2)}`;
+            break;
+        default:
+            resultado = "Operação inválida.";
+    }
+
+    // Exibir o resultado
     document.getElementById("resultado").textContent = "Resultado: " + resultado;
-  }
+}
   function exe7() {
     // Obter o valor do salário do campo de entrada
     let salario = parseFloat(document.getElementById("salario").value);
@@ -252,21 +246,3 @@ function exe10() {
   // Exibir o resultado
   document.getElementById("resultado").textContent = "Resultado: Preço ao consumidor: R$ " + precoConsumidor.toFixed(2);
 }
-
-=======
-      case 1: // O primeiro numero elevado ao segundo numero
-        resultado = (numero1 ** numero2);
-        break;
-      case 2: // Raiz quadrada de cada um dos numeros
-        resultado = raizQuadrada = Math.sqrt(numero1);
-        resultado = raizQuadrada = Math.sqrt(numero2);
-        break;  
-      case 3: // Raiz cubica de cada um dos numeros
-        resultado = numero1 * numero2;
-        break;
-      }
-  
-    // Exibir o resultado
-    document.getElementById("resultado").textContent = "Resultado: " + resultado;
-  }
->>>>>>> 00363efd458915b812fcd1f63eea650201ee0240
