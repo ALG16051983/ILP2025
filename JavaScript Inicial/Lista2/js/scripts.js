@@ -3,25 +3,33 @@ function seguir() {
   }
 function exe1() {
     // Obter os valores das notas dos campos de entrada
-    const nota1 = parseFloat(document.getElementById("nota1").value);
-    const nota2 = parseFloat(document.getElementById("nota2").value);
-    const nota3 = parseFloat(document.getElementById("nota3").value);
-    const nota4 = parseFloat(document.getElementById("nota4").value);
+    let nota1 = Number(document.getElementById("nota1").value);
+    let nota2 = Number(document.getElementById("nota2").value);
+    let nota3 = Number(document.getElementById("nota3").value);
+    let nota4 = Number(document.getElementById("nota4").value);
   
     // Calcular a média
-    const media = (nota1 + nota2 + nota3 + nota4) / 4;
+    let media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+    //Definir status media - APROVADO OU REPROVADO
+    let status="";
+    if(media < 7){
+      status="Reprovado";
+    } else {
+      status ="Aprovado";
+    }
   
     // Exibir a média no elemento label com o id "media"
-    document.getElementById("sub").textContent = "A média do aluno é: " + media.toFixed(2); //toFixed(2) para duas casas decimais
+    document.getElementById("media").textContent = "A média do aluno é: " + media + " - Status: " + status
   }
   function exe2() {
     // Obter os valores das notas dos campos de entrada
-    const nota1 = parseFloat(document.getElementById("nota1").value);
-    const nota2 = parseFloat(document.getElementById("nota2").value);
+    let nota1 = Number(document.getElementById("nota1").value);
+    let nota2 = Number(document.getElementById("nota2").value);
     
   
     // Calcular a média
-    const media = (nota1 + nota2) / 2;
+    let media = (nota1 + nota2) / 2;
 
     // Determinar o status da media
     let status="";
@@ -38,24 +46,27 @@ function exe1() {
   }
   function exe3() {
     // Obter os valores dos numeros dos campos de entrada
-    const numero1 = parseFloat(document.getElementById("numero1").value);
-    const numero2 = parseFloat(document.getElementById("numero2").value);
+    let numero1 = Number(document.getElementById("numero1").value);
+    let numero2 = Number(document.getElementById("numero2").value);
       
     // Determinar o menor
     let menor;
     if(numero1 < numero2){
       menor= numero1;
-    } else {
+    } else if(numero2 < numero1) {
       menor = numero2;
+    }
+    else {
+      menor = "Os dois são iguais"
     }
   
     document.getElementById("menor").textContent = "O menor numero digitado é: " + menor
   }
   function exe4() {
     // Obter os valores dos numeros dos campos de entrada
-    const numero1 = parseFloat(document.getElementById("numero1").value);
-    const numero2 = parseFloat(document.getElementById("numero2").value);
-    const numero3 = parseFloat(document.getElementById("numero3").value);
+    let numero1 = Number(document.getElementById("numero1").value);
+    let numero2 = Number(document.getElementById("numero2").value);
+    let numero3 = Number(document.getElementById("numero3").value);
       
     // Determinar o maior
     let maior;
@@ -72,9 +83,9 @@ function exe1() {
   }
   function exe5() {
     // Obter os valores dos números dos campos de entrada
-    const numero1 = parseFloat(document.getElementById("numero1").value);
-    const numero2 = parseFloat(document.getElementById("numero2").value);
-    const operacao = parseInt(document.getElementById("operacao").value);
+    let numero1 = parseFloat(document.getElementById("numero1").value);
+    let numero2 = parseFloat(document.getElementById("numero2").value);
+    let operacao = parseInt(document.getElementById("operacao").value);
   
     // Validar os números
     if (isNaN(numero1) || isNaN(numero2)) {
@@ -113,9 +124,14 @@ function exe1() {
     // Obter os valores dos números dos campos de entrada
     let numero1 = Number(document.getElementById("numero1").value);
     let numero2 = Number(document.getElementById("numero2").value);
+<<<<<<< HEAD
     let operacao = Number(document.getElementById("operacao").value);
     
 
+=======
+    let operacao = parseInt(document.getElementById("operacao").value);
+  
+>>>>>>> 00363efd458915b812fcd1f63eea650201ee0240
     // Validar os números
     if (isNaN(numero1) || isNaN(numero2)) {
       alert("Por favor, insira números válidos.");
@@ -125,6 +141,7 @@ function exe1() {
     // Realizar a operação selecionada
     let resultado;
     switch (operacao) {
+<<<<<<< HEAD
       case 1: // Primeiro elevado pelo 2
         resultado = Math.pow(numero1, numero2);
         break;
@@ -236,3 +253,20 @@ function exe10() {
   document.getElementById("resultado").textContent = "Resultado: Preço ao consumidor: R$ " + precoConsumidor.toFixed(2);
 }
 
+=======
+      case 1: // O primeiro numero elevado ao segundo numero
+        resultado = (numero1 ** numero2);
+        break;
+      case 2: // Raiz quadrada de cada um dos numeros
+        resultado = raizQuadrada = Math.sqrt(numero1);
+        resultado = raizQuadrada = Math.sqrt(numero2);
+        break;  
+      case 3: // Raiz cubica de cada um dos numeros
+        resultado = numero1 * numero2;
+        break;
+      }
+  
+    // Exibir o resultado
+    document.getElementById("resultado").textContent = "Resultado: " + resultado;
+  }
+>>>>>>> 00363efd458915b812fcd1f63eea650201ee0240
