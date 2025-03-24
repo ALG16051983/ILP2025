@@ -136,20 +136,20 @@ function exe1() {
     let resultado;
     switch (operacao) {
         case 1: // O primeiro numero elevado ao segundo numero
-            resultado = numero1 ** numero2; // Usando o operador ** para potência
+            resultado = (numero1 ** numero2).toFixed(2); // Usando o operador ** para potência
             break;
         case 2: // Raiz quadrada de cada um dos numeros
-            resultado = `Raiz quadrada de ${numero1}: ${Math.sqrt(numero1)}, Raiz quadrada de ${numero2}: ${Math.sqrt(numero2)}`;
+            resultado = `Raiz quadrada de ${numero1}: ${Math.sqrt(numero1).toFixed(2)}, Raiz quadrada de ${numero2}: ${Math.sqrt(numero2).toFixed(2)}`;
             break; 
         case 3: // Raiz cúbica de cada um dos numeros
-            resultado = `Raiz cúbica de ${numero1}: ${Math.cbrt(numero1)}, Raiz cúbica de ${numero2}: ${Math.cbrt(numero2)}`;
+            resultado = `Raiz cúbica de ${numero1}: ${Math.cbrt(numero1).toFixed(2)}, Raiz cúbica de ${numero2}: ${Math.cbrt(numero2).toFixed(2)}`;
             break;
         default:
             resultado = "Operação inválida.";
     }
 
     // Exibir o resultado
-    document.getElementById("resultado").textContent = "Resultado: " + resultado;
+    document.getElementById("resultado").textContent = "Resultado: " + resultado
 }
   function exe7() {
     // Obter o valor do salário do campo de entrada
