@@ -246,3 +246,48 @@ function exe10() {
   // Exibir o resultado
   document.getElementById("resultado").textContent = "Resultado: Preço ao consumidor: R$ " + precoConsumidor.toFixed(2);
 }
+function exe22(){
+  let idade = Number(document.getElementById("idade").value)
+  let peso = Number(document.getElementById("peso").value)
+  let risco
+  if (idade >= 0 && idade < 20){
+      if (peso >= 0 && peso < 60){
+          risco = 9
+      }
+      else if (peso > 60 && peso <= 90){
+          risco = 8
+      }
+      else if (peso > 90){
+          risco = 7
+      }
+      else risco = "peso inválido"
+  }
+  else if (idade >= 20 && idade <= 50){
+      if (peso >= 0 && peso < 60){
+          risco = 6
+      }
+      else if (peso > 60 && peso <= 90){
+          risco = 5
+      }
+      else if (peso > 90){
+          risco = 4
+      }
+      else risco = "peso inválido"
+  }
+  else if (idade > 50){
+      if (peso >= 0 && peso < 60){
+          risco = 3
+      }
+      else if (peso > 60 && peso <= 90){
+          risco = 2
+      }
+      else if (peso > 90){
+          risco = 1
+      }
+      else risco = "peso inválido"
+  }
+  else {
+      risco = "idade inválida"
+  }
+  document.getElementById("risco").innerHTML = risco
+}
