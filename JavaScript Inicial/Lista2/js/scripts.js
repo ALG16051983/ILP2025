@@ -244,7 +244,7 @@ function exe10() {
   let precoConsumidor = custoFabrica + valorDistribuidor + valorImpostos;
 
   // Exibir o resultado
-<<<<<<< HEAD
+HEAD
   document.getElementById("resultado").textContent = "Resultado: Preço ao consumidor: R$ " + precoConsumidor.toFixed(2);
 }
 function exe22() {
@@ -333,12 +333,3 @@ function exe24() {
       document.getElementById("resultado").innerHTML = `Aumento: R$ ${aumento.toFixed(2)}<br>Imposto: R$ ${imposto.toFixed(2)}<br>Novo preço: R$ ${novoPreco.toFixed(2)}<br>Classificação: ${classificacao}`;
   }
 }
-=======
-  document.getElementById("resultado").innerHTML = "Custo de Fabrica: " + custoFabrica.toFixed(2) + " Valor da Distribuidora" + valorDistribuidor.toFixed(2) + " Valor de Impostos: " + valorImpostos.toFixed(2) + " Resultado: Preço ao consumidor: R$ " + precoConsumidor.toFixed(2);
-}
-
-function exe22()
-//obter o valores de entrada
-let idade Number = (document.getElementById("idade").value);
-let peso 
->>>>>>> 6cf3fe59e228c9203012d0979ab78ad378e6964c
