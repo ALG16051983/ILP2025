@@ -226,7 +226,7 @@ function exe10() {
       return;
   }
 
-  // Calcular o preço ao consumidor com base no custo de fábrica
+  // Calcular o preço ao consumidor com base no custo de fábrica ok
   let porcentagemDistribuidor, porcentagemImpostos;
   if (custoFabrica <= 12000) {
       porcentagemDistribuidor =  0.05;
