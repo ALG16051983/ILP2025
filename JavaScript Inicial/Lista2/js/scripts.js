@@ -136,20 +136,20 @@ function exe1() {
     let resultado;
     switch (operacao) {
         case 1: // O primeiro numero elevado ao segundo numero
-            resultado = numero1 ** numero2; // Usando o operador ** para potência
+            resultado = (numero1 ** numero2).toFixed(2); // Usando o operador ** para potência
             break;
-        case 2: // Raiz quadrada de cada um dos numeros
-            resultado = `Raiz quadrada de ${numero1}: ${Math.sqrt(numero1)}, Raiz quadrada de ${numero2}: ${Math.sqrt(numero2)}`;
+        case 2: // Raiz quadrada de cada um dos numeros 
+            resultado = `Raiz quadrada de ${numero1}: ${Math.sqrt(numero1).toFixed(2)}, Raiz quadrada de ${numero2}: ${Math.sqrt(numero2).toFixed(2)}`;
             break; 
         case 3: // Raiz cúbica de cada um dos numeros
-            resultado = `Raiz cúbica de ${numero1}: ${Math.cbrt(numero1)}, Raiz cúbica de ${numero2}: ${Math.cbrt(numero2)}`;
+            resultado = `Raiz cúbica de ${numero1}: ${Math.cbrt(numero1).toFixed(2)}, Raiz cúbica de ${numero2}: ${Math.cbrt(numero2).toFixed(2)}`;
             break;
         default:
             resultado = "Operação inválida.";
     }
 
     // Exibir o resultado
-    document.getElementById("resultado").textContent = "Resultado: " + resultado;
+    document.getElementById("resultado").textContent = "Resultado: " + resultado
 }
   function exe7() {
     // Obter o valor do salário do campo de entrada
@@ -193,11 +193,11 @@ function exe8() {
 }
 function exe9() {
   // Obter o valor do saldo médio do campo de entrada
-  let saldoMedio = parseFloat(document.getElementById("saldoMedio").value);
+  let saldoMedio = Number(document.getElementById("saldoMedio").value);
 
   // Verificar se o saldo médio é um número válido
   if (isNaN(saldoMedio)) {
-      document.getElementById("resultado").textContent = "Resultado: Por favor, insira um saldo médio válido.";
+      document.getElementById("resultado").innerHTML = "Resultado: Por favor, insira um saldo médio válido.";
       return;
   }
 
@@ -214,29 +214,29 @@ function exe9() {
   }
 
   // Exibir o resultado
-  document.getElementById("resultado").textContent = "Resultado: Crédito disponível: R$ " + credito.toFixed(2);
+  document.getElementById("resultado").innerHTML = "O saldo medio é R$ " + saldoMedio.toFixed(2) + " e o Crédito disponível: R$ " + credito.toFixed(2);
 }
 function exe10() {
   // Obter o valor do custo de fábrica do campo de entrada
-  let custoFabrica = parseFloat(document.getElementById("custoFabrica").value);
+  let custoFabrica = Number(document.getElementById("custoFabrica").value);
 
   // Verificar se o custo de fábrica é um número válido
   if (isNaN(custoFabrica)) {
-      document.getElementById("resultado").textContent = "Resultado: Por favor, insira um custo de fábrica válido.";
+      document.getElementById("resultado").innerHTML = "Resultado: Por favor, insira um custo de fábrica válido.";
       return;
   }
 
   // Calcular o preço ao consumidor com base no custo de fábrica
   let porcentagemDistribuidor, porcentagemImpostos;
   if (custoFabrica <= 12000) {
-      porcentagemDistribuidor = 0.05;
-      porcentagemImpostos = 0;
+      porcentagemDistribuidor =  0.05;
+      porcentagemImpostos =  0;
   } else if (custoFabrica <= 25000) {
       porcentagemDistribuidor = 0.10;
-      porcentagemImpostos = 0.15;
+      porcentagemImpostos =  0.15;
   } else {
-      porcentagemDistribuidor = 0.15;
-      porcentagemImpostos = 0.20;
+      porcentagemDistribuidor =  0.15;
+      porcentagemImpostos =  0.20;
   }
 
   let valorDistribuidor = custoFabrica * porcentagemDistribuidor;
@@ -244,6 +244,7 @@ function exe10() {
   let precoConsumidor = custoFabrica + valorDistribuidor + valorImpostos;
 
   // Exibir o resultado
+<<<<<<< HEAD
   document.getElementById("resultado").textContent = "Resultado: Preço ao consumidor: R$ " + precoConsumidor.toFixed(2);
 }
 function exe22() {
@@ -332,3 +333,12 @@ function exe24() {
       document.getElementById("resultado").innerHTML = `Aumento: R$ ${aumento.toFixed(2)}<br>Imposto: R$ ${imposto.toFixed(2)}<br>Novo preço: R$ ${novoPreco.toFixed(2)}<br>Classificação: ${classificacao}`;
   }
 }
+=======
+  document.getElementById("resultado").innerHTML = "Custo de Fabrica: " + custoFabrica.toFixed(2) + " Valor da Distribuidora" + valorDistribuidor.toFixed(2) + " Valor de Impostos: " + valorImpostos.toFixed(2) + " Resultado: Preço ao consumidor: R$ " + precoConsumidor.toFixed(2);
+}
+
+function exe22()
+//obter o valores de entrada
+let idade Number = (document.getElementById("idade").value);
+let peso 
+>>>>>>> 6cf3fe59e228c9203012d0979ab78ad378e6964c
