@@ -246,48 +246,89 @@ function exe10() {
   // Exibir o resultado
   document.getElementById("resultado").textContent = "Resultado: Preço ao consumidor: R$ " + precoConsumidor.toFixed(2);
 }
-function exe22(){
-  let idade = Number(document.getElementById("idade").value)
-  let peso = Number(document.getElementById("peso").value)
-  let risco
-  if (idade >= 0 && idade < 20){
-      if (peso >= 0 && peso < 60){
-          risco = 9
-      }
-      else if (peso > 60 && peso <= 90){
-          risco = 8
-      }
-      else if (peso > 90){
-          risco = 7
-      }
-      else risco = "peso inválido"
+function exe22() {
+  const idade = parseInt(document.getElementById("idade").value);
+  const peso = parseInt(document.getElementById("peso").value);
+  let risco = "";
+
+  if (idade < 20 && peso < 60) {
+    risco = "Risco: 9";
+  } else if (idade < 20 && peso >= 60 && peso <= 90) {
+    risco = "Risco: 8";
+  } else if (idade < 20 && peso > 90) {
+    risco = "Risco: 7";
+  } else if (idade >= 20 && idade <= 50 && peso < 60) {
+    risco = "Risco: 6";
+  } else if (idade >= 20 && idade <= 50 && peso >= 60 && peso <= 90) {
+    risco = "Risco: 5";
+  } else if (idade >= 20 && idade <= 50 && peso > 90) {
+    risco = "Risco: 4";
+  } else if (idade > 50 && peso < 60) {
+    risco = "Risco: 3";
+  } else if (idade > 50 && peso >= 60 && peso <= 90) {
+    risco = "Risco: 2";
+  } else if (idade > 50 && peso > 90) {
+    risco = "Risco: 1";
+  } else {
+    risco = "Dados inválidos";
   }
-  else if (idade >= 20 && idade <= 50){
-      if (peso >= 0 && peso < 60){
-          risco = 6
+
+  document.getElementById("risco").textContent = "Resultado: " + risco;
+}
+function exe24() {
+  let preco = Number(document.getElementById("preco").value);
+  let categoria = Number(document.getElementById("categoria").value);
+  let situacao = document.getElementById("situacao").value;
+  let aumento = 0;
+  let imposto = 0;
+  let novoPreco = 0;
+  let classificacao = "";
+  if (preco < 0) {
+      document.getElementById("resultado").innerHTML = "Preço inválido";
+  } else {
+      // Calcula o aumento
+      if (preco <= 25) {
+          switch (categoria) {
+              case 1:
+                  aumento = preco * 0.05;
+                  break;
+              case 2:
+                  aumento = preco * 0.08;
+                  break;
+              case 3:
+                  aumento = preco * 0.10;
+                  break;
+          }
+      } else {
+          switch (categoria) {
+              case 1:
+                  aumento = preco * 0.12;
+                  break;
+              case 2:
+                  aumento = preco * 0.15;
+                  break;
+              case 3:
+                  aumento = preco * 0.18;
+                  break;
+          }
       }
-      else if (peso > 60 && peso <= 90){
-          risco = 5
+      // Calcula o imposto
+      if (categoria == 2 || situacao == 'R') {
+          imposto = preco * 0.05;
+      } else {
+          imposto = preco * 0.08;
       }
-      else if (peso > 90){
-          risco = 4
+      // Calcula o novo preço
+      novoPreco = preco + aumento + imposto;
+      // Classifica o produto
+      if (novoPreco < 50) {
+          classificacao = "Barato";
+      } else if (novoPreco >= 50 && novoPreco < 120) {
+          classificacao = "Normal";
+      } else {
+          classificacao = "Caro";
       }
-      else risco = "peso inválido"
+      // Exibe o resultado
+      document.getElementById("resultado").innerHTML = `Aumento: R$ ${aumento.toFixed(2)}<br>Imposto: R$ ${imposto.toFixed(2)}<br>Novo preço: R$ ${novoPreco.toFixed(2)}<br>Classificação: ${classificacao}`;
   }
-  else if (idade > 50){
-      if (peso >= 0 && peso < 60){
-          risco = 3
-      }
-      else if (peso > 60 && peso <= 90){
-          risco = 2
-      }
-      else if (peso > 90){
-          risco = 1
-      }
-      else risco = "peso inválido"
-  }
-  else {
-      risco = "idade inválida"
-  }
-  document.getElementById("risco").innerHTML = risco
 }
