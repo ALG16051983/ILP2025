@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: orange;
+    /* usa modelo FlexBox, conceito de caixa para posicionamento */
+    display: flex;
+    align-items: center; /* centralizado verticalmente */
+    justify-content: center; /* centralizado horizontalmente */
+    height: 100vh; /* define a altura da tela 100% */
+}
+.card {
+    background-color: blue;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0,1);
+    text-align: center;
+}
+button{
+    background: color(srgb red green blue);
+    color: rgb(8, 62, 110);
+    border: none;
+    padding: 10px 15px; /* 10px e superior e 15 e esquerda */
+    border-radius: 5px; /* borda */
+    cursor: pointer; /* ponteiro do mouse */
+}    
+button:hover {
+    background-color: brown;
+}
+
+.image{
+    border-radius: 50%; /* campos arredondados de 50% */
+    width: 100px; /*largura imagem */
+    height: 100px; /* altura da imagem */
+    margin-bottom: 10px; /* espacamento externo abaixo */
+}
+
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    /* 10 px acima e abaixo e 0px a direita e a esquerda */
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.container {
+    /* Capacidade de um elemento crescer */
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
