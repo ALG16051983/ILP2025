@@ -80,3 +80,51 @@ function exe3(){
     while(cliente != 0)
     alert(`${codigos}${estoque}`)    
 }
+function exe4(){
+// declaracao vetor
+
+let vetor =[]
+
+// usuario informa 15 numeros
+
+for(let i=0;i<15;i++){
+    vetor.push(Number(prompt(`Informe o ${i+1} o numero`)))
+}
+// verificar se os numeros sao iguais a 30 e mostrar a posicao onde estao
+let posicoes =[]
+for(let i=0;i<15;i++){
+    if (vetor[i]==30){  
+        posicoes.push(i)
+    }
+}
+alert(`Numero 30 encontrado nas posicoes ${posicoes}`)
+}
+
+function exe5(){
+// declaracao dos vetores
+let logica =[], linguagem = []
+// entrada de dados
+for(let i=0;i<15;i++){
+    logica.push(Number(prompt(`Informe o ${i+1}o do aluno que faz a disciplina de logica`)))
+}
+for(let i=0;i<10;i++){
+    linguagem.push(Number(prompt(`Informe o ${i+1}o do aluno que faz a disciplina linguagem`)))
+}
+/// encontrar a intercessao'
+let intercessao = []
+/// percorre o vetor logica
+for(let i=0;i<15;i++){
+    let posicao = linguagem.indexOf(logica[i])
+    if(posicao != -1){
+        intercessao.push(logica[i])
+        }
+    }
+    alert(`Alunos que fazem as duas disciplinas ${intercessao}`)
+}
+function exe6(){
+    let vendas = [], percentuais = [], nomes = []
+    for (let i=0;i<5;i++){
+        nomes.push(prompt(`Informe nome do ${i+1}o vendedor`))
+        vendas.push(Number(prompt(`Informe total vendido`)))
+    }
+}
