@@ -118,13 +118,59 @@ for(let i=0;i<15;i++){
     if(posicao != -1){
         intercessao.push(logica[i])
         }
-    }
-    alert(`Alunos que fazem as duas disciplinas ${intercessao}`)
+}
+alert(`Alunos que fazem as duas disciplinas ${intercessao}`)
 }
 function exe6(){
-    let vendas = [], percentuais = [], nomes = []
-    for (let i=0;i<5;i++){
+    let vendas = [], percentuais = [], nomes = [],comissao = []
+    //entrada de dados
+    for (let i=0;i<3;i++){
         nomes.push(prompt(`Informe nome do ${i+1}o vendedor`))
-        vendas.push(Number(prompt(`Informe total vendido`)))
+        vendas.push(Number(prompt(`Informe total vendido pelo ${i+1}o vendedor`)))
+        percentuais.push(Number(prompt(`Informe percentual de vendas do ${i+1}o vendedor`)))
+        //Calculo comissoes
+        comissao.push((vendas[i] * percentuais[i] / 100))
     }
+    //relacao dos vendedores e os valores a receber
+    let relatorios = ""
+    for(let i=0;i<3;i++){
+        relatorios += `\nVendedor: ${nomes[i]} vai receber ${comissao[i]}`
+    }
+    alert(relatorios)
+    //Total das vendas de todos os vendedores
+    let somavendas = 0
+    for (let i=0;i<3;i++){
+        somavendas = somavendas + vendas[i]
+    }
+    alert(`Total de vendas ${somavendas.toFixed(2)}`)
+    //Calcula maior e menor comissao
+    let maior = comissao[0]
+    let menor = comissao [0]
+    
+    for(let i=1;i<3;i++){
+        if (comissao[i] > maior){
+            maior = comissao[i]
+        }
+        if (comissao[i] < menor){
+            menor = comissao[i]
+        }
+        let imaior = comissao.indexOf(maior) // posicao do maior na comissao
+        alert(`${nomes[imaior]} vai recebermaior comissao de ${maior}`)
+        let imenor = comissao.indexOf(menor) // posicao do menor na comissao
+        alert(`${nomes[imenor]} vai receber menor comissao de ${menor}`)
+    }
+}
+function exe7(){
+    let conta = 0
+    let soma = 0
+    for(let i=0;i<10;i++){
+        if (vetor[i] < 0){
+            conta ++
+        }
+        else{
+            soma += vetor[i]
+        }
+        
+    }
+    alert(`Contagem de negativos ${conta} e soma dos positivos ${soma}`)
 }
