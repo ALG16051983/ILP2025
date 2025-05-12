@@ -174,3 +174,53 @@ function exe7(){
     }
     alert(`Contagem de negativos ${conta} e soma dos positivos ${soma}`)
 }
+function exe8(){
+    let nomes = [], medias = []
+    for(let i=0;i<7;i++){
+        nomes.push(prompt(`Informe nome do aluno ${i+1}`))
+        medias.push(Number(prompt(`Informe a media do aluno ${+1}`)))
+    }
+    //calcular a media
+    let maior = medias [0]
+    for(let i=1;i<7;i++){
+        if (medias[1] > maior){
+            maior = medias[i]
+        }
+    }
+    //nome do aluno com a maior media
+    let pos = medias.indexOf(maior)
+    alert (`Nome do aluno com a maior media ${maior} é ${nomes[pos]}`)
+    // clacular a nota necessaria no exame final
+    for(let i=0;i<6;i++){
+        if(medias[i] < 7){ // ficou exame final
+            //nota necessaria sabendo que a media deve ser minimo 5
+            alert(`${nomes[i]} precisa tirar ${10-medias[i]}`)
+        }
+    }
+}
+function exe9(){
+    let codigos = []; nomes =[]; precos = []
+    for(let i=0; i<10;i++){
+        nomes.push(prompt(`Informe nome do produto ${i+1}`))
+        codigos.push(Number(prompt(`Informe o codigo do produto ${i+1}`)))
+        precos.push(Number(prompt(`Informe preço do produto ${i+1}`)))
+    }
+    //gerar relartorios com os novos preços
+    for(let i=0;i<10;i++){
+        let novo
+        if(codigos[i] % 2 == 0 && precos[i] > 1000){
+            novo = precos[i] + precos[i] * 15/100
+        }
+        else if (codigos[i] % 2 == 0){
+            novo = precos[i] + precos[i] * 10/100
+        }
+        else if(precos[i] > 100){
+            novo = precos[i] + precos[i] * 10/100
+        }
+        else { 
+            novo = precos[i]
+        }
+        alert(`${nomes[i]} - ${codigos[i]} - ${precos} - ${novo}`)
+    }
+
+}
