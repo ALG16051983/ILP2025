@@ -224,3 +224,39 @@ function exe9(){
     }
 
 }
+function exe10(){
+    let vetor1 = []; vetor2 = []
+    let vetorR1 = []; vetorR2 = []
+    //Entrada de dados
+    for(let i = 0;i<10;i++){
+        vetor1.push(Number(prompt(`Informe o ${i+1}. Elemento vetor 1`)))
+    }
+    for(let i=0;i<5;i++){
+        vetor2.push(Number(prompt(`Informe o ${i+1}. O elemento do vetor 2`)))
+    }
+    //Calcular o vetor resultante 1
+    // Calcular soma dos elementos do vetor 2
+    let somavet2 = 0
+    for(let i=0; i<5;i++){
+        somavet2 += vetor2[i]
+    }
+    //Cria vetor resultante 1
+    for(let i=0;i<10;i++){
+        if (vetor1[i] % 2 ==0){
+            vetor1.push(vetor1[i] + somavet2)
+        }
+    }
+    alert(`Vetor resultante 1 ${vetorR1}`)
+    //Calcular vetor resultante 2
+    for(let i=0;i<10;i++){
+        if(vetor1[i] % 2 == 1){ //verifique se o elemento e impar
+        let qtddivisores = 0
+        for(let j=0;j<5;j++){
+            if(vetor1[i] % vetor2[j] == 0) //encontrou um divisor
+            qtddivisores++ // conta mais 1 nos divisores    
+        }
+        vetor2.push(qtddivisores) // adiciona contador no vetor
+        }
+    }
+    alert(`Vetor resultante 2 ${vetor2}`)
+}
