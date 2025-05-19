@@ -260,3 +260,49 @@ function exe10(){
     }
     alert(`Vetor resultante 2 ${vetor2}`)
 }
+function exe3obj(){
+    //cadastra codigo e quantidade em estoque
+    let vetor = []
+    for(let i=0;i<3;i++){
+        //cria objeto
+        let objeto = {
+            codigo: prompt(`Informe o codigo do produto`),
+            estoque: Number(prompt(`Informe a quantidade em estoque`)),
+            preco: Number(prompt(`Informe o preço do produto`))
+        }
+        //adicione o objeto ao vetor
+        vetor.push(objeto)
+    }
+    //comprando
+    let cliente = Number(prompt(`Informe codigo do cliente`))
+    do{
+        let codigo = prompt(`Informe codigo do produto para compra`)
+        let qntd = Number(prompt(`Informe a quantidade de produtos para a compra`))
+        // procura pra ver se o produto existe
+        let produtoencontrado
+        let i 
+        for(i=0;i<3;i++){
+            if (vetor[i].codigo == codigo){ //produto encontrado
+                produtoencontrado = vetor[i] // guardar produto em produtoencontrado
+                break // para de procurar e sai do for
+            }
+        }
+        if (i ==3){ //produto nao existe
+            alert(`Codigo ${codigo} Produto nao existe`)
+        }
+        else { //produto existe
+                //tem estoque suficiente
+            if (produtoencontrado.estoque >= qntd){
+            //atualiza o estoque
+            produtoencontrado.estoque -= qntd
+            alert(`Pedido Atendido. Obrigado e volte sempre`)
+        }
+        else {
+            alert(`Não temos estoque suficiente desta mercadoria`)
+        }
+    }
+    cliente = Number(prompt(`Informe codigo do novo cliente. Digite 0 para encerrar`))
+    } // fecha o do
+    while (cliente != 0)
+    console.log(vetor)
+}
