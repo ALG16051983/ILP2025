@@ -306,3 +306,77 @@ function exe3obj(){
     while (cliente != 0)
     console.log(vetor)
 }
+function exe6obj(){
+    let vetor = []
+    //entrada de dados
+    for (let i=0;i<3;i++){ //cria o objeto
+        let objeto = {
+            nomes:(prompt(`Informe nome do ${i+1}o vendedor`)),
+            vendas:(Number(prompt(`Informe total vendido pelo ${i+1}o vendedor`))),
+            percentuais:(Number(prompt(`Informe percentual de vendas do ${i+1}o vendedor`)))
+        }
+        //Calculo comissoes -> vamos utilizar o . para acessar o campo.atributo do objeto
+        objeto.comissao = (objeto.vendas * objeto.percentuais) / 100
+        //Adiciona o objeto ao vetor
+        vetor.push(objeto)
+    }
+    //relacao dos vendedores e os valores a receber
+    let relatorios = ""
+    for(let i=0;i<3;i++){
+        relatorios += `\nVendedor: ${vetor[i].nomes} vai receber ${vetor[i].comissao}`
+    }
+    alert(relatorios)
+    //Total das vendas de todos os vendedores
+    let somavendas = 0
+    for (let i=0;i<3;i++){
+        somavendas = somavendas + vetor[i].vendas
+    }
+    alert(`Total de vendas ${somavendas.toFixed(2)}`)
+    //Calcula maior e menor comissao
+    let objmaior = vetor[0] //maior
+    let objmenor = vetor [0] //menor
+    
+    for(let i=1;i<3;i++){
+        if (vetor[i].comissao > objmaior.comissao){
+            objmaior = vetor[i]
+        }
+        if (vetor[i].comissao < objmenor.comissao){
+            objmenor = vetor[i]
+        }
+        
+        
+    }
+    alert(`${objmaior.nomes} vai recebermaior comissao de ${objmaior.comissao}`)
+    alert(`${objmenor.nomes} vai receber menor comissao de ${objmenor.comissao}`)
+}
+function exe9obj(){
+    let vetor = []
+
+    for(let i=0; i<10;i++){
+        let objeto = {
+            nomes:(prompt(`Informe nome do produto ${i+1}`)),
+            codigos:(Number(prompt(`Informe o codigo do produto ${i+1}`))),
+            preços:(Number(prompt(`Informe preço do produto ${i+1}`))),
+            novo: 0
+        }
+    }
+    //gerar relartorios com os novos preços
+    for(let i=0;i<10;i++){
+        let novo
+        if(vetor[i].codigos % 2 == 0 && vetor[i].preços > 1000){
+            vetor[i].novo = vetor[i].preços + vetor[i].preços * 20/100
+        }
+        else if (vetor[i].codigos % 2 == 0){
+            vetor[i].novo = vetor[i].precos + precos[i] * 15/100
+        }
+        else if(precos[i] > 100){
+            novo = precos[i] + precos[i] * 10/100
+        }
+        else { 
+            novo = precos[i]
+        }
+        alert(`${nomes[i]} - ${codigos[i]} - ${precos} - ${novo}`)
+    }
+
+}
+
