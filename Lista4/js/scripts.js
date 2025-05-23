@@ -351,32 +351,29 @@ function exe6obj(){
 }
 function exe9obj(){
     let vetor = []
-
-    for(let i=0; i<10;i++){
-        let objeto = {
-            nomes:(prompt(`Informe nome do produto ${i+1}`)),
-            codigos:(Number(prompt(`Informe o codigo do produto ${i+1}`))),
-            preços:(Number(prompt(`Informe preço do produto ${i+1}`))),
+    for(let i=0;i<10;i++){
+        let obj = {
+            nome : prompt(`Informe nome do produto ${i+1}`),
+            codigo : Number(prompt(`Informe código do produto ${i+1}`)),
+            preco : Number(prompt(`Informe preço do produto ${i+1}`)),
             novo: 0
         }
+        vetor.push(obj)
     }
-    //gerar relartorios com os novos preços
+    // gerar o relatório com os novos preços
     for(let i=0;i<10;i++){
-        let novo
-        if(vetor[i].codigos % 2 == 0 && vetor[i].preços > 1000){
-            vetor[i].novo = vetor[i].preços + vetor[i].preços * 20/100
+        if (vetor[i].codigo % 2 == 0 && vetor[i].preco > 1000){
+            vetor[i].novo = vetor[i].preco + vetor[i].preco * 20/100
         }
-        else if (vetor[i].codigos % 2 == 0){
-            vetor[i].novo = vetor[i].precos + precos[i] * 15/100
+        else if (vetor[i].codigo % 2 == 0){
+            vetor[i].novo = vetor[i].preco + vetor[i].preco * 15/100
         }
-        else if(precos[i] > 100){
-            novo = precos[i] + precos[i] * 10/100
+        else if (vetor[i].preco > 100){
+            vetor[i].novo = vetor[i].preco + vetor[i].preco * 10/100
         }
-        else { 
-            novo = precos[i]
+        else {
+            vetor[i].novo = vetor[i].preco
         }
-        alert(`${nomes[i]} - ${codigos[i]} - ${precos} - ${novo}`)
+        alert(`${vetor[i].nome} - ${vetor[i].codigo} - ${vetor[i].preco} - ${vetor[i].novo}`)
     }
-
 }
-
