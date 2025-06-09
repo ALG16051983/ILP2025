@@ -1,41 +1,36 @@
 function entrada(mat){
-    // sera 3x5
     for(let i=0;i<3;i++){
-        mat[i] = [] // cria cada linha da matriz
+        mat[i] = []
         for(let j=0;j<5;j++){
-            mat[i][j] = parseInt(Math.random() * 10) + 15 // gera numeros aleatorios entre 0 e 9
+            mat[i][j] = parseInt(Math.random() * 10) + 15// gera número aleatório entre 0 e 9
         }
     }
 }
-function somaentre15e20(mat){
+function somaEntre15e20(mat){
     let soma = 0
     for(let i=0;i<3;i++){
         for(let j=0;j<5;j++){
-            if(mat [i][j] >= 15 && mat[i][j] <= 20){
-            soma ++
+            if (mat[i][j] >= 15 && mat[i][j] <= 20){
+                soma++
             }
-           
-            
         }
     }
- // funcao vai retornar a soma
- return soma
+    return soma 
 }
-function exibematriz(mat){
+function exibeMatriz(mat){
     let saida = ''
-    for(let i = 0;i < mat[i].length;i++){
+    for(let i=0;i<mat.length;i++){
         saida = saida + '\n'
-        for(let j=0;j <mat[i].length;j++){
+        for(let j=0;j<mat[i].length;j++){
             saida = saida + " " + mat[i][j]
         }
-
     }
-    alert
-    }
+    alert(saida)
 }
-function Exe1(){
+function exe1(){
     let mat = []
     entrada(mat)
-    alert(`A soma dos numeros entre 15 e 20 é ${somaentre15e20(mat)}`)
-    exibematriz(mat)
+    alert(`A soma dos número entre 15 e 20 é ${somaEntre15e20(mat)}`)
+    exibeMatriz(mat)
 }
+exe1()
