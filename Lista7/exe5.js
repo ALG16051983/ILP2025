@@ -25,6 +25,32 @@ function calculatotalano(mat){
         }
         
     }
+    return soma
+}
+function calcularvendasmaior5000(){
+    for(let i=0;i<12;i++){
+        let qtde = 0
+        for(let j=0;j<4;j++){
+            if(mat[i][j] > 5000){
+                qntd++
+            }
+        }
+        alert(`Em ${vet[i]}teve ${qntd} vendas maiores que R$5000,00`)
+    }
+
+}
+function calculamesesmenores1000(){
+    for(let i=0;i<12;i++){
+        let qtde = 0
+        for(let j=0;j<4;j++){
+            if(mat[i][j] < 1000){
+                qntd++
+            }
+        }
+        if (qntd > 0)
+        alert(`Em ${vet[i]}teve ${qntd} vendas menores que R$1000,00`)
+    }
+
 }
 
 function calculatotalmes(mat,vet){
@@ -44,9 +70,11 @@ function exe5(){
     cadastra(mat,vet)
     calculatotalmes(mat,vet)
     calculatotalsemana(mat)
+    calcularvendasmaior5000(mat,vet)
+    calculamesesmenores1000(mat, vet)
     alert(`O total vendido no ano foi ${somaano(mat)}`)
 }
 exe5()
 
-//crie uma funcao que calcula e mostra a qantidade de vendas maiores que 5000 em cada mes
+//crie uma funcao que calcula e mostra a quantidade de vendas maiores que 5000 em cada mes
 //crie uma funcao que calcula e mostra os meses que tiveram vendas menores que 1000
